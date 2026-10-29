@@ -1,0 +1,12 @@
+{
+  "name": "DASH_CAN_SIMHUB",
+  "version": "V1_29",
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "DASH_CAN_SIMHUB_V1_29.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

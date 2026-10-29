@@ -1,0 +1,28 @@
+format([DataCorePlugin.GameData.NewData.SpeedKmh],'0') + ';' +
+format([DataCorePlugin.GameData.NewData.Rpms],'0') + ';' +
+format([DataCorePlugin.GameData.NewData.OilTemperature],'0') + ';' +
+round([DataCorePlugin.GameData.NewData.FuelPercent] * 10, 0) + ';' +
+isnull([DataCorePlugin.GameData.NewData.Gear],'N') + ';' +
+format([DataCorePlugin.GameData.NewData.WaterTemperature],'0') + ';' +
+if([DataCorePlugin.GameData.NewData.EngineIgnitionOn], 2, 0) + ';' +
+if([DataCorePlugin.GameData.NewData.Rpms] > 100, 1, 0) + ';' +
+(if([DataCorePlugin.GameData.NewData.TurnIndicatorLeft], 1, 0) + if([DataCorePlugin.GameData.NewData.TurnIndicatorRight], 2, 0)) + ';' +
+if([DataCorePlugin.GameData.NewData.Handbrake], 1, 0) + ';' +
+if([DataCorePlugin.GameData.NewData.ABSActive], 1, 0) + ';' +
+if(isnull([DataCorePlugin.GameData.NewData.TCActive], false), 1, 0) + ';' +
+round(isnull([DataCorePlugin.GameData.Throttle], 0) * 20, 0) + ';' +
+format([DataCorePlugin.CurrentDateTime], 'yyyy') + ';' +
+format([DataCorePlugin.CurrentDateTime], 'MM')   + ';' +
+format([DataCorePlugin.CurrentDateTime], 'dd')   + ';' +
+format([DataCorePlugin.CurrentDateTime], 'HH')   + ';' +
+format([DataCorePlugin.CurrentDateTime], 'mm')   + ';' +
+format([DataCorePlugin.CurrentDateTime], 'ss')   + ';' +
+if([DataCorePlugin.GameRunning], if([DataCorePlugin.GamePaused], 0, 1), 0) + ';' +
+if([DataCorePlugin.GameData.TCLevel] == 0, 1, 0) + ';' +
+format([DataCorePlugin.GameData.TyrePressureFrontLeft],'0.00') + ';' +
+format([DataCorePlugin.GameData.TyrePressureFrontRight],'0.00') + ';' +
+format([DataCorePlugin.GameData.TyrePressureRearLeft],'0.00') + ';' +
+format([DataCorePlugin.GameData.TyrePressureRearRight],'0.00') + ';' +
+format([DataCorePlugin.GameData.BrakesTemperatureAvg],'0') + ';' +
+format(min(min([DataCorePlugin.GameData.TyreWearFrontLeft],[DataCorePlugin.GameData.TyreWearFrontRight]),min([DataCorePlugin.GameData.TyreWearRearLeft],[DataCorePlugin.GameData.TyreWearRearRight])),'0') + ';' +
+format([DataCorePlugin.GameData.TyresTemperatureAvg],'0') + '\n'

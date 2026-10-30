@@ -4,13 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Instalar DASH_CAN_SIMHUB</title>
-  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.package.js"></script>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.package.js"
+          onerror="document.getElementById('estado').textContent='Não foi possível carregar o instalador (verifica a ligação à Internet).'"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    #estado { color: #b00020; min-height: 1.5em; }
+  </style>
 </head>
 <body>
   <h1>DASH_CAN_SIMHUB V1_29</h1>
-  <p>Liga a placa ESP32-S3 por USB e usa o Chrome ou o Edge.</p>
+  <p>Liga a placa ESP32-S3 por USB e usa o Chrome ou o Edge (no PC, não no telemóvel).</p>
   <esp-web-install-button manifest="manifest.json">
     <button slot="activate">Instalar firmware</button>
   </esp-web-install-button>
+  <p id="estado"></p>
+  <script>
+    if (!('serial' in navigator)) {
+      document.getElementById('estado').textContent =
+        'Este browser não suporta a instalação. Abre esta página no Chrome ou no Edge.';
+    }
+  </script>
 </body>
 </html>

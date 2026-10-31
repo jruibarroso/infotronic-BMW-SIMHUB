@@ -7,12 +7,13 @@
 <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"
         onerror="var e=document.getElementById('estado');e.textContent='Não foi possível carregar o instalador. Verifique a ligação à Internet e recarregue a página.';e.style.display='block'"></script>
 <style>
-  :root{--bg:#0f1115;--card:#181b22;--txt:#e8eaf0;--mut:#9aa1ad;--acc:#1c69d4;--acc2:#4a8fe8;--warn:#e0a526;--line:#2a2f3a}
+  :root{--bg:#101010;--card:#181b22;--txt:#e8eaf0;--mut:#9aa1ad;--acc:#1c69d4;--acc2:#4a8fe8;--warn:#e0a526;--line:#2a2f3a}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.55 system-ui,Segoe UI,Roboto,sans-serif}
   .wrap{max-width:680px;margin:0 auto;padding:32px 16px 48px}
-  header{display:flex;align-items:center;gap:12px;margin-bottom:24px}
-  .logo{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--acc),#0a3d8a);display:grid;place-items:center;font-weight:800}
+  header{text-align:center;margin-bottom:24px}
+  .brand{display:block;width:100%;max-width:440px;height:auto;margin:0 auto 14px;border-radius:12px;border:1px solid var(--line)}
+  esp-web-install-button:not(:defined) [slot=unsupported],esp-web-install-button:not(:defined) [slot=not-allowed]{display:none}
   h1{font-size:1.35rem;margin:0}
   .sub{color:var(--mut);font-size:.9rem}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:16px}
@@ -29,11 +30,9 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="logo">iT</div>
-    <div>
-      <h1>infoTronic BMW SIMHUB</h1>
-      <div class="sub">Atualização de firmware da interface</div>
-    </div>
+    <img src="logo.jpg" alt="infoTronic" class="brand" width="800" height="198">
+    <h1>BMW SIMHUB</h1>
+    <div class="sub">Atualização de firmware da interface</div>
   </header>
 
   <div class="card">

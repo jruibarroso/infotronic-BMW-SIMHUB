@@ -5,6 +5,9 @@ O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-PT/1.1.0/).
 
 ## [Por lançar]
 
+### Alterado
+- Página de atualização do firmware com novo aspeto e instruções passo a passo para o cliente.
+
 ## [1.29] - 2026-10-29
 
 Primeira versão pública.
